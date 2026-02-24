@@ -22,35 +22,46 @@
         <div class="grid grid-cols-3 gap-4">
             <div id="Total-Tab" class="bg-[#FFFFFF] p-5 rounded-b-xl rounded-t-xl border-2 border-gray-200">
                 <p class="font-medium">Total</p>
-                <p class="font-bold text-[#002C5C]">8</p>
+                <p id="Total-Count" class="font-bold text-[#002C5C]">8</p>
             </div>
             <div id="Interview-Tab" class="bg-[#FFFFFF] p-5 rounded-b-xl rounded-t-xl border-2 border-gray-200">
                 <p class="font-medium">Interview</p>
-                <p class="font-bold text-green-500">0</p>
+                <p id="Interview-Count" class="font-bold text-green-500">0</p>
             </div>
             <div id="Rejected-Tab" class="bg-[#FFFFFF] p-5 rounded-b-xl rounded-t-xl border-2 border-gray-200">
                 <p class="font-medium">Rejected</p>
-                <p class="font-bold text-red-500">0</p>
+                <p id="Rejected-Count" class="font-bold text-red-500">0</p>
             </div>
         </div>
         <hr class="bg-gray-500 mt-7 mb-8">
     </header>
 
     <section class="w-[80%] mx-auto">
-        <h1 class="text-[#002C5C] font-bold mb-5">Available Jobs</h1>
+        <div class="flex justify-between">
+            <h1 class="text-[#002C5C] font-bold mb-5">Available Jobs</h1>
+            <h1 class="text-[#323B49] font-medium ">8 Jobs</h1>
+        </div>
         <div class="gap-10">
-            <button id="all-filter-btn"
+            <button onclick="togglesStyle('all-filter-btn')" id="all-filter-btn"
                 class="px-8 rounded-b-sm rounded-t-sm py-2 font-medium bg-[#3B82F6] text-white ">All</button>
-            <button id="interview-filter-btn"
+            <button onclick="togglesStyle('interview-filter-btn')" id="interview-filter-btn"
                 class="px-5 py-2 rounded-b-sm rounded-t-sm font-medium text-[#64748B] bg-[#FFFFFF] border-2 border-gray-200">Interview</button>
-            <button id="rejected-filter-btn"
+            <button onclick="togglesStyle('rejected-filter-btn')" id="rejected-filter-btn"
                 class="px-5 font-medium py-2 rounded-b-sm rounded-t-sm text-[#64748B] bg-[#FFFFFF] border-2 border-gray-200">Rejected</button>
+        </div>
+
+        <!-- Filtered Company Card  -->
+
+        <div id="Filtered-Section" class="hidden">
+
         </div>
 
         <!-- Job-Cards  -->
 
-        <div id="allCard">
+        <div id="allCards">
+
             <!-- Job-1  -->
+
             <div
                 class="card flex justify-between bg-[#FFFFFF] border-2 border-gray-200 p-6 rounded-b-xl rounded-t-xl mt-4">
                 <div class="space-y-5">
@@ -276,6 +287,7 @@
             </div>
 
             <!-- Job-7  -->
+
             <div
                 class="card flex justify-between bg-[#FFFFFF] border-2 border-gray-200 p-6 rounded-b-xl rounded-t-xl mt-4">
                 <div class="space-y-5">
@@ -349,9 +361,13 @@
                             class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
+
         </div>
 
     </section>
+
+    <script src="scripts.js"></script>
+
 </body>
 
 </html>
