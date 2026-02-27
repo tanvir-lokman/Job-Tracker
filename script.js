@@ -8,7 +8,7 @@ const interviewContainer = document.getElementById("interview-container");
 const rejectedContainer = document.getElementById("rejected-container");
 const emptystate = document.getElementById("empty-state")
 
-
+// Tab Switching Function 
 
 function switchTab(tab) {
 
@@ -69,29 +69,25 @@ document.getElementById("jobs-container").addEventListener("click", function (ev
     const parent = card.parentNode;
     const status = card.querySelector(".status");
 
+// Card removing and adding in Interview and Reject Tab 
 
     if (clickElement.classList.contains("Interview-Btn")) {
         interviewContainer.appendChild(card);
         status.innerText = "Interview"
-        tabCount();
     }
     if (clickElement.classList.contains("Rejected-Btn")) {
         rejectedContainer.appendChild(card);
         status.innerText = "Reject"
-        tabCount();
     }
     if (clickElement.classList.contains("Trash-Btn")) {
         parent.removeChild(card);
-        tabCount();
     }
+    tabCount();
 });
 
 
 
 function tabCount() {
-    // totalCount.innerText = allContainer.children.length;
-    // totalInterviewCount.innerText = interviewContainer.children.length;
-    // totalRejectedCount.innerText = rejectedContainer.children.length;
 
     const counts = {
         all: allContainer.children.length,
